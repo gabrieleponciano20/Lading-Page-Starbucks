@@ -25,3 +25,9 @@ Desenvolver habilidades iniciais em desenvolvimento front-end e ampliar meu port
 ## Prévia do Projeto:
 
 ![Landing Page Starbucks](visao.jpeg)
+
+## Referência de aprendizagem
+
+Projeto desenvolvido com base em um tutorial disponível no YouTube, utilizado como material de apoio para praticar e aprofundar conhecimentos em desenvolvimento front-end.
+
+🔗 https://youtu.be/ik-njdH5Q5c?is=G6kBBZ8OLgJ3JbG9
