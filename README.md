@@ -4,12 +4,12 @@ Projeto de desenvolvimento de uma landing page temática inspirada na identidade
 
 O projeto foi desenvolvido com acompanhamento de um tutorial do YouTube, permitindo aplicar na prática conceitos de estruturação de páginas, estilização e organização de elementos visuais.
 
-## Tecnologias utilizadas:
+## Recursos Técnicos:
 HTML
 CSS
 JS
 
-## Conceitos praticados:
+## Desenvolvimento:
 - Estruturação semântica;
 - Organização de seções;
 - Estilização com CSS;
@@ -24,4 +24,4 @@ Desenvolver habilidades iniciais em desenvolvimento front-end e ampliar meu port
 
 ## Prévia do Projeto:
 
-
+![Landing Page Starbucks](visao.jpeg)
