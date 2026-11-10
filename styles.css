@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#container {
+  background-image: url("background-mobile.png");
+  background-size: contain;
+  height: 400vh;
+}
+
+.title {
+  font-size: clamp(2.5rem);
+  text-transform: uppercase;
+  color: var(--color-neutral-8);
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: var(--color-primary-1);
+    position: absolute;
+    bottom: 0;
+    border-radius: 30px;
+  }
+}
+
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-1: #eee4db;
+  --color-neutral-2: #d4c3b6;
+  --color-neutral-3: #b8a99e;
+  --color-neutral-4: #9e8f85;
+  --color-neutral-5: #7e6e65;
+  --color-neutral-6: #5e4e45;
+  --color-neutral-7: #3e2e25;
+  --color-neutral-8: #1e0e05;
+  --color-neutral-9: #000000;
+
+  --color-primary-1: #34815d;
+  --color-primary-2: #2c6e4f;
+  --color-primary-3: #245c42;
+
+  --color-secondary-1: #f5c518;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.btn-mobile {
+  font-size: 1.5rem;
+}
+
+.btn-default {
+  background-color: var(--color-primary-1);
+  color: var(--color-neutral-0);
+
+  &:hover {
+    background-color: var(--color-primary-2);
+  }
+}
+
+.btn-outlined {
+  background-color: transparent;
+  color: var(--color-primary-1);
+  border: 2px solid var(--color-primary-1);
+
+  &:hover {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+  }
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+  padding: 32px 4%;
+  padding-top: clamp(0px, 5vw, 32px);
+}
+
+/* Essa funcionalidade faz com que a imagem se ajuste 
+de acordo com o tamanho da tela */
+#home .home-image {
+  width: clamp(300px, 50%, 400px);
+}
+
+#home .home-title {
+  color: var(--color-neutral-8);
+  text-align: center;
+  font-size: clamp(3rem, 5vw, 4.3rem);
+  text-transform: uppercase;
+  line-height: 1.2;
+  max-width: 700px;
+} /* <-- Faltava fechar esta chave aqui! */
+
+#home .home-title span {
+  color: var(--color-primary-1);
+}
+
+#home .home-description {
+  color: #000000;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500; /* Dica: adicionei o ponto e vírgula que faltava aqui também */
+}
+
+#home .home-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px; /* Aumentei de 12px para 48px para abaixar bem os botões! */
+}
+
+header {
+  background-color: var(--color-neutral-1);
+  padding: 12px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 180px;
+    }
+
+    ul {
+      display: none;
+      list-style: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      position: absolute;
+      top: 80px;
+      background-color: var(--color-neutral-1);
+      left: 0;
+      padding: 1rem;
+
+      &.show {
+        display: flex;
+      }
+
+      li {
+        text-align: center;
+
+        a {
+          color: var(--color-neutral-9);
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: var(--color-primary-1);
+            border-bottom: 1px solid var(--color-primary-1);
+          }
+        }
+      }
+    }
+
+    .btn-defaut {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    .navbar {
+      .btn-mobile {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        gap: 1rem;
+        width: auto;
+        padding: 0;
+
+        li {
+          a {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .btn-defaut {
+        display: block;
+      }
+    }
+  }
+}
+
+#trending {
+  padding: 72px 4% 64px 4%; /* <--- Mudou aqui: o terceiro valor (64px) é o espaço debaixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  min-height: auto;
+
+  .trending-cards {
+    display: flex; /* Deixa os cards lado a lado */
+    justify-content: center; /* Centraliza os cards */
+    flex-wrap: wrap; /* Quebra linha se a tela for menor */
+    gap: 32px; /* Espaço entre um card e outro */
+    width: 100%;
+
+    .trending-card {
+      position: relative;
+
+      img {
+        width: clamp(
+          250px,
+          20vw,
+          300px
+        ); /* Ajustado para não ficar gigante ou travado */
+      } /* <-- Fechou a img */
+
+      .trending-rate {
+        background-color: var(--color-neutral-0);
+        position: absolute;
+        bottom: 70px;
+        right: 30px;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        i {
+          color: var(--color-secondary-1);
+        }
+      } /* <-- Fechou o .trending-rate */
+
+      .trending-card-description {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--color-neutral-8);
+        margin-top: 12px;
+
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--color-neutral-7);
+        }
+      } /* <-- Fechou o .trending-card-description */
+    } /* <-- Fechou o .trending-card */
+  } /* <-- Fechou o .trending-cards */
+} /* <-- Fechou o #trending */
+
+#about {
+  padding: 32px 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-primary-1);
+  min-height: calc(100vh - 96px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 32px;
+}
+
+.title {
+  color: var(--color-neutral-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o texto e a linha juntos */
+
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px; /* Largura da linha amarela */
+    height: 4px; /* Espessura/altura da linha */
+    background-color: var(--color-secondary-1);
+    margin-top: 10px; /* <--- É ISTO QUE SEPARA A LINHA DO TÍTULO! (Aumente ou diminue aqui) */
+  }
+}
+
+
+
+.title-sobre {
+  color: #ffffff;      /* Deixa a letra branca */
+  font-size: 3.2rem;   /* Aumenta o tamanho (podes ajustar para mais ou para menos) */
+  text-align: center;  /* Garante que fica centralizado */
+  margin-top: -5px;
+}
+
+
+
+
+.about-content {
+  display: flex;
+  flex-direction: row; /* Alinha os 3 itens lado a lado (História - Imagem - Propósito) */
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+
+  .about-image {
+    width: clamp(
+      200px,
+      20vw,
+      300px
+    ); /* Reduz o tamanho do copo no meio para equilibrar */
+  }
+
+  .about-info {
+    padding: 24px;
+    border-radius: 20px;
+    background-color: #245c42;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 380px; /* Limita a largura dos cards de texto */
+
+    h3 {
+      color: var(--color-neutral-0);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    span {
+      color: var(--color-secondary-1);
+    }
+
+    p {
+      color: var(--color-neutral-0);
+      font-size: 1rem;
+    }
+  }
+} /* <--- Faltava fechar esta chave aqui! */
+
+#products {
+  padding: 24px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  .products-cards {
+    display: flex;
+    flex-direction: row; /* Deixa os cards lado a lado */
+    justify-content: center; /* Centraliza no meio da tela */
+    flex-wrap: wrap; /* Permite que quebrem linha se faltar espaço */
+    gap: 16px;
+    width: 100%;
+
+    img {
+      width: 280px; /* <--- Diminui o tamanho do copo para ficar proporcional */
+      position: relative;
+      top: -40px; /* Puxa o copo um pouco para cima do card */
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    }
+
+    .products-content {
+      margin-top: -30px; /* Puxa o texto para perto do copo menor */
+
+      h3 {
+        text-align: center;
+        color: var(--color-primary-0);
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          color: var(--color-primary-1);
+          font-size: 1rem;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #container {
+    background-image: url("background-mobile.png");
+    background-size: cover;
+    background-position: start;
+    background-repeat: no-repeat;
+  }
+
+  #trending {
+    .trending-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 44px;
+    }
+  }
+}
+
+#products {
+  min-height: auto; /* Evita que a seção estique desnecessariamente a tela inteira */
+  gap: 8rem;
+
+  .products-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    .product-card {
+      img {
+        width: 250px; /* Ajuste aqui o tamanho do copo conforme preferir */
+      }
+    }
+  }
+}
+
+
+#products {
+  .products-banner {
+    background-color: rgba(255, 255, 255, 0.363); /* Fundo branco bem transparente */
+    backdrop-filter: blur(8px); /* Efeito de desfoque moderno estilo "vidro" */
+    border: 5px solid rgba(255, 255, 255, 0.459); /* Bordinha sutil */
+    padding: 20px 32px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: -210px auto 0 auto; /* Centraliza a caixa na tela */
+    text-align: center;
+
+    p {
+      color: var(--color-neutral-8); /* Ajuste para a cor do seu texto */
+      font-size: 1.1rem;
+      font-weight: normal;
+    }
+  }
+}
+
+#products {
+  /* Se o título for uma tag h3 ou h4, por exemplo: */
+  h3 { /* (ou a classe específica que deste ao título) */
+    margin-top: 15px; /* <--- Aumenta este valor para empurrar o título mais para baixo rumo à caixa */
+    margin-bottom: 45px; /* Adiciona um respiro entre o título e a caixa transparente */
+  }
+}
+
+
+
+footer {
+  background-color: var(--color-primary-1);
+  color: #eee4db;
+  padding: 12px 4%;
+  text-align: center;
+  color: var(--color-neutral-8);
+
+p {
+    font-size: 1rem;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  #about {
+    margin: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+    }
+  }
+}
