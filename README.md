@@ -5,9 +5,9 @@ Projeto de desenvolvimento de uma landing page temática inspirada na identidade
 O projeto foi desenvolvido com acompanhamento de um tutorial do YouTube, permitindo aplicar na prática conceitos de estruturação de páginas, estilização e organização de elementos visuais.
 
 ## Recursos Técnicos:
-HTML
-CSS
-JS
+- HTML
+- CSS
+- JS
 
 ## Desenvolvimento:
 - Estruturação semântica;
